@@ -8,10 +8,15 @@ export default class AssignmentsSidebarContainer extends React.Component {
     super(props);
     this.state = { showAssignment: false }
     this.openAssignment = this.openAssignment.bind(this)
+    this.updateCurrentAssignment = this.updateCurrentAssignment.bind(this)
   }
 
   openAssignment(assignment) {
     debugger
+  }
+
+  updateCurrentAssignment(assignment) {
+    this.props.updateCurrentAssignment(assignment)
   }
 
   render() {
@@ -20,13 +25,15 @@ export default class AssignmentsSidebarContainer extends React.Component {
     if (this.state.showAssignment) {
       showAssignmentTemplate = <AssignmentContentContainer />
     }
+    let updateAssignment = this.updateCurrentAssignment
     return (
       <div>
         <h1>Assignments</h1>
         {Object.keys(assignmentsList).map(function(key, count){
             return <AssignmentsSidebarPresenter
               key={count}
-              object={assignmentsList[key]} />
+              object={assignmentsList[key]}
+              updateCurrentAssignment={updateAssignment} />
         })}
 
         {/* {Object.entries(this.props.assignments).forEach(

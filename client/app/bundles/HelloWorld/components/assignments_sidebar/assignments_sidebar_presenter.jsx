@@ -7,8 +7,8 @@ export default class AssignmentsSidebarPresenter extends React.Component {
     this.openAssignment = this.openAssignment.bind(this)
   }
 
-  openAssignment(assignment) {
-    debugger
+  openAssignment() {
+    this.props.updateCurrentAssignment(this.props.object)
   }
 
   render() {
