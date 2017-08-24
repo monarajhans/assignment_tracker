@@ -22,9 +22,11 @@ export default class AssignmentContentPresenter extends React.Component {
   }
 
   render() {
-    let template = <AssignmentDetailsTab />
+    let template = <AssignmentDetailsTab
+      assignmentDetails={this.props.assignment} />
     if (this.state.showTab == 'submissions') {
-      template = <SubmissionDetailsTab />
+      template = <SubmissionDetailsTab
+        submissionDetails={this.props.assignment.submissions} />
     }
     return (
       <div>
