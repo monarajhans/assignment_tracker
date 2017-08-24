@@ -4,6 +4,7 @@ import AssignmentsSidebarContainer from
   './assignments_sidebar/assignments_sidebar_container'
 import AssignmentContentContainer from
   './assignment_content/assignment_content_container'
+import Styles from './styles.scss'
 
 export default class HelloWorld extends React.Component {
   constructor(props, _railsContext) {
@@ -28,12 +29,15 @@ export default class HelloWorld extends React.Component {
 
   render() {
     return (
-      <div>
-        <AssignmentsSidebarContainer
-          assignments={this.state.allAssignments}
+      <div className="assignmentsContainer" style={Styles}>
+        <h1>Assignments</h1>
+        <div className="flexBoxes">
+          <AssignmentsSidebarContainer
+            assignments={this.state.allAssignments}
           updateCurrentAssignment={this.updateCurrentAssignment}/>
           <AssignmentContentContainer
             assignment={this.state.currentAssignment}/>
+        </div>
       </div>
     );
   }

@@ -30,9 +30,10 @@ export default class AssignmentContentPresenter extends React.Component {
     }
     return (
       <div>
-        <button onClick={this.showAssignment}>Assignment</button>
-        <button onClick={this.showSubmissions}>Submissions</button>
-        This is assignment content presenter
+        <div className="tabs">
+          <button className="tablink"onClick={this.showAssignment}>Assignment</button>
+          <button className="tablink"onClick={this.showSubmissions}>Submissions</button>
+        </div>
         {template}
       </div>
     );

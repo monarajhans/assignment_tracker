@@ -20,7 +20,7 @@ export default class AssignmentContentContainer extends React.Component {
   render() {
     let template = this.fetchTemplate()
     return (
-      <div>
+      <div className="assignmentContentContainer">
         {template}
       </div>
     );

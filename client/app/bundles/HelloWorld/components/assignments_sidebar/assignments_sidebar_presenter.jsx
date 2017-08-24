@@ -5,6 +5,7 @@ export default class AssignmentsSidebarPresenter extends React.Component {
   constructor(props, _railsContext) {
     super(props);
     this.openAssignment = this.openAssignment.bind(this)
+    this.state = { active: 'notActive' }
   }
 
   openAssignment() {
@@ -13,9 +14,11 @@ export default class AssignmentsSidebarPresenter extends React.Component {
 
   render() {
     return (
-      <div onClick={this.openAssignment}>
-        <p>Title: {this.props.object.title}</p>
-        <p>Due on: {this.props.object.due_on}</p>
+      <div className="assignmentsPresenter" onClick={this.openAssignment}>
+        <p className="assignmentDetails assignmentTitle">
+          Title: {this.props.object.title}
+        </p>
+        <p className="assignmentDetails">Due on: {this.props.object.due_on}</p>
       </div>
     );
   }
